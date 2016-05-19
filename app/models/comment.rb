@@ -1,6 +1,7 @@
 class Comment < ActiveRecord::Base
+  acts_as_votable
 	validates :content,
-	length: {in 6..255}
+	length: {minimum: 6}
 
   belongs_to :user
   belongs_to :solution

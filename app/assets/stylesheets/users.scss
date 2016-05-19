@@ -2,26 +2,60 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import "materialize";
+
 $color-primary : white;
 $color-secondary : black;
 $nodeco : none;
 
-body {
- font-family: 'Oswald', sans-serif;
+
+
+html *
+{
+   color: black !important;
+  font-family: 'Roboto'!important;
+  font-weight: 200 !important;
+}
+
+body > div > div > div > h3:nth-child(1) {
+    font-size: 1rem;
+}
+
+body > nav {
+    margin-top: 10px;
+}
+
+body > nav > div > a.brand-logo {
+    color: black;
+    margin-left: 20px;
+    text-decoration: none;
+}
+body > nav > div > ul > li {
+   
+    font-size: 30px;
 }
 
 div.container-fluid {
-  text-align: center;
- }
+    text-align: center;
+}
+
+a:focus, a:hover {
+    color: transparent;
+    text-decoration: none;
+}
 
 body > div.container-fluid {
-  margin-top: 20px;
-   margin-left: 150px;
+    margin-top: 5px;
     width: 900px;
 }
 
+body > nav > div > a.brand-logo {
+    color: black;
+    margin-left: 20px;
+}
+
 #icon {
-  text-align: center;
+    text-align: center;
 }
 
 body > img {
@@ -31,110 +65,161 @@ body > img {
 }
 
 // BUTTONS
-
-
 body > div.container-fluid > div > div > div {
-  margin-top: 60px;
+    margin-top: 60px;
+}
 
+#easy {
+    width: 141px;
+    background-color: transparent;
+    color: black;
+    height: 45px;
+    margin-right: 10px;
+    border: 1px solid #000;
+}
+
+#medium {
+    width: 141px;
+    background-color: transparent;
+    color: black;
+    height: 45px;
+    margin-right: 10px;
+    border: 1px solid #000;
+}
+
+#hard {
+    width: 141px;
+    background-color: transparent;
+    color: black;
+    height: 45px;
+    border: 1px solid #000;
+}
+
+body > nav > div > ul.left.hide-on-med-and-down {
+    margin-left: 30px;
+}
+
+body > div.container-fluid > div > div > form > input.btn.btn-primary {
+    border: 1px solid #000;
 }
 
 .btn-group-vertical>.btn:first-child:not(:last-child) {
-    border-top-left-radius: 0px;
-    border-top-right-radius: 0px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
 }
 
-
 .btn-group-vertical>.btn:last-child:not(:first-child) {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
-    border-bottom-right-radius: 0px;
-    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
 }
 
+#new_user > input.btn.btn-default {
+    border: 1px solid #000;
+}
 
 body > div.container-fluid > div > div > div > button:nth-child(1) {
-  margin-bottom: 15px;
-  width: 143px;
-  height: 50px;
-  background-color: transparent;
-  color: $color-secondary;
-  border: 1px solid black;
+    margin-right: 15px;
+    width: 143px;
+    height: 50px;
+    background-color: transparent;
+    color: $color-secondary;
+    border: 1px solid #000;
 }
 
 body > div.container-fluid > div > div > div > button:nth-child(2) {
-  margin-bottom: 15px;
-  height: 50px;
-  background-color: transparent;
-  color: $color-secondary;
-  border: 1px solid black;
+    margin-right: 15px;
+    height: 50px;
+    background-color: transparent;
+    color: $color-secondary;
+    border: 1px solid #000;
 }
 
 body > div.container-fluid > div > div > div > button:nth-child(3) {
-  height: 50px;
-   background-color: transparent;
-  color: $color-secondary;
-  border: 1px solid black;
+    height: 50px;
+    background-color: transparent;
+    color: $color-secondary;
+    border: 1px solid #000;
 }
 
-.btn {
-    display: inline-block;
-    padding: 6px 12px;
-    margin-bottom: 0;
-    font-size: 23px;
-    font-weight: 400;
-    line-height: 1.42857143;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    -ms-touch-action: manipulation;
-    touch-action: manipulation;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    background-image: none;
-    border: 1px solid black;
-    border-radius: 4px;
+#login {
+    color: black;
+    background-color: white;
+    margin-right: 30px;
+    width: 150px;
+    height: 50px;
 }
 
-body > div.container-fluid > div > div > h1:nth-child(2) {
-      margin-top: 70px;
+#new_user > input.btn.btn-default {
+      color: black;
+    background-color: white;
+    margin-right: 30px;
+    width: 150px;
+    height: 50px;
+}
+
+body > div.container-fluid > div > div > form > input.btn.btn-primary {
+     color: black;
+    background-color: white;
+    margin-right: 30px;
+    width: 150px;
+    height: 50px;
+
+}
+
+
+body > div.container-fluid > div > div > h2 {
+    margin-top: 50px;
+    margin-bottom: 40px;
 }
 
 body > div.container-fluid > div > div > h2 {
-  margin-top: 50px;
+    font-size: 2.56rem;
+}
+
+body > div.container-fluid > div > div > h1 {
+    font-size: 3.8rem;
+    margin-top: 30px;
+}
+
+#title {
+    font-weight: 200;
+}
+
+#login {
+    border: 1px solid black;  
 }
 
 nav .button-collapse {
-  color: black;
-  margin-right: 20px;
+    color: #000;
+    margin-right: 20px;
 }
 
 nav ul a {
-  color: $color-secondary;
+    color: $color-secondary;
 }
 
 body > nav > div > ul.right.hide-on-med-and-down > li:nth-child(1) > a {
-  color: $color-secondary;
-  text-decoration: $nodeco;
+    color: $color-secondary;
+    text-decoration: $nodeco;
 }
 
 body > nav > div > ul.right.hide-on-med-and-down > li:nth-child(2) > a {
-  color: $color-secondary;
-  text-decoration: $nodeco;
+    color: $color-secondary;
+    text-decoration: $nodeco;
 }
 
 body > nav > div > ul.right.hide-on-med-and-down > li:nth-child(3) > a {
-  color: $color-secondary;
-  text-decoration: $nodeco;
+    color: $color-secondary;
+    text-decoration: $nodeco;
 }
 
 body > nav > div > ul.right.hide-on-med-and-down > li:nth-child(4) > a {
-  color: $color-secondary;
-  text-decoration: $nodeco;
+    color: $color-secondary;
+    text-decoration: $nodeco;
 }
 
 body > nav {
@@ -143,47 +228,142 @@ body > nav {
 }
 
 body > div.container-fluid > div > div > img {
-  width: 60%;
+    width: 25%;
 }
 
 body > nav > div > a.button-collapse > i {
-  text-decoration: none;
+    text-decoration: none;
 }
-
-
-
-
-
-@media only screen 
-and (min-device-width : 320px) 
-and (max-device-width : 568px) 
-and (orientation : portrait) { 
 
 body > nav > div > a.button-collapse {
-  margin-top: 10px;
+    float: right;
 }
 
-body > div.container-fluid > div > div > h1:nth-child(2) {
-  font-size: 2.2em;
+
+// NAV BAR 
+
+#dropdown1 > li:nth-child(1) > a {
+    color: black;
 }
 
-body > div.container-fluid > div > div > img {
-    width: 100%;
-    margin-top: 15px;
-    margin-left: 20px;
+#dropdown1 > li:nth-child(2) > a {
+    color: black;
 }
 
-body > img {
-    width: 50%;
-    margin-top: 15px;
-    margin-left: 76px;
+#dropdown1 > li:nth-child(3) > a {
+    color: black;
 }
 
-body > div.container-fluid {
-   margin-left: 30px;
-    width: 350px;
+#dropdown1 > li:nth-child(4) > a {
+    color: black;
+}
+
+
+//LOGIN 
+
+body > div.container-fluid > div > div > form > div:nth-child(3) > label {
+    font-size: 1.8rem;
+    color: black;
+    float: left;
+}
+
+body > div.container-fluid > div > div > form > div:nth-child(4) > label {
+    font-size: 1.8rem;
+    color: black;
+    float: left;
+}
+
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) and (orientation : portrait) {
+    body > nav > div > a.button-collapse {
+        margin-top: 10px;
+    }
+
+    body > div.container-fluid > div > div > h1:nth-child(2) {
+        font-size: 2.2em;
+    }
+
+    body > div.container-fluid > div > div > img {
+        width: 100%;
+        margin-top: 15px;
+        margin-left: 20px;
+    }
+
+    body > img {
+        width: 50%;
+        margin-top: 15px;
+        margin-left: 76px;
+    }
+
+    body > div.container-fluid {
+        margin-left: 30px;
+        width: 350px;
+        text-align: center;
+    }
+}
+
+// START
+
+#dropdown1 {
+    width: 123px !important;
+}
+
+
+//HARD PAGE
+
+body > div.container-fluid > h3 {
+        font-size: 1.5rem;
+}
+
+//EASY PAGE
+
+
+//MEDIUM PAGE
+
+
+//FOOTER - ABOUT
+
+body > div > footer {
+    background-color: transparent !important;
     text-align: center;
 }
 
+body > div.container-fluid > footer > div {
+    background-color: transparent !important;
+}
 
+body > div.container-fluid > footer {
+    margin-top: 140px;
+}
+
+// FOOTER- MAIN - CHALLENGE
+
+body > footer {
+     background-color: transparent !important;
+     text-align: center;
+}
+
+body > footer > div {
+     background-color: transparent !important;
+}
+
+
+pre {
+    font-family: monospace, monospace !important;
+    font-size: 0.8em !important;
+    text-align: left;
+    word-wrap: break-word;
+    margin-left: 30px;
+}
+
+//MODAL
+
+#modal1 > div {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#modal2 > div {
+    text-align: center;
+    margin-top: 20px;
 }

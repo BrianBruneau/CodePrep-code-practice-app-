@@ -30,8 +30,21 @@ Rails.application.routes.draw do
 
   get 'solutions/:id' => 'solutions#show'
 
+  get 'mysolutions' => 'solutions#mysolutions'
+
+  put 'solutions/:id' => 'solutions#update'
+
   # QUESTIONS
 
+  get 'questions/easy' => 'questions#easy'
+
+  get 'questions/medium' => 'questions#medium'
+
+  get 'questions/hard' => 'questions#hard'
+
+
+  # get 'questions/show' => 'questions#show'
+  
   get 'questions/:id' => 'questions#show'
 
   
@@ -60,15 +73,25 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :comments do
+    member do
+      put "like", to: "comments#upvote"
+      put "dislike", to: "comments#downvote"
+    end
+  end
 
 
+#START CHALLENGE
 
+  get 'main' => 'main#index'
 
-  root 'main#index'
+  root 'users#new'
 
-  #SAMPLE PAGE
+  #ABOUT PAGE
 
-  get '/sample' => 'main#sample'
+  get 'about' => 'main#about'
+
+  resources :tags
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

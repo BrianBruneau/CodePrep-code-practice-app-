@@ -7,7 +7,6 @@
  <h3> Logged in as <%= @current_user.name %></h3>
 
   <h1>MY SAVED SOLUTIONS</h1>
-  <div id="countdown"></div>
   <% @solutions.each do |solution|  %>
   <br>
 	<pre class="solutions"><strong>PROBLEM:</strong><br><br><%= solution.question.content %>
