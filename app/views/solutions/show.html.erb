@@ -1,67 +1,68 @@
 <%= render "partials/nav" %>
         
-<!-- <div class="container-fluid">
-    <div class="row">
-        <div class="col-xs-6 col-sm-4 col-lg-12">
-            <h1 id="title">CODEPREP</h1><img src=
-            "http://i22.photobucket.com/albums/b315/Doifreakuout14/LOGO.png">
-            <h1>SOLUTION FOR PROBLEM #1</h1>
-            <p>Maecenas eu elit fringilla, sollicitudin magna eget, convallis
-            tellus. Morbi eget elementum magna. Cras lacinia risus id purus
-            malesuada, mattis posuere sapien aliquet. Praesent porttitor
-            lobortis sollicitudin. Sed dolor nisi, tincidunt a nibh et,
-            malesuada molestie sem.</p>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    Type Solution Here:
-                </div>
-                <div class="panel-body">
-                    Solution goes here
-                </div>
-            </div><button class="btn btn-primary" type="button">SUBMIT</button>
-            <h1>COMMENTS</h1>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    Type Solution Here:
-                </div>
-                <div class="panel-body">
-                    Solution goes here
-                </div>
-            </div>
-        </div>
-    </div>
-</div> -->
-
 <div class="container-fluid">
 <div class="row">
   <div class="col-xs-6 col-sm-10 col-lg-12">
- <h3> Logged in as <%= @current_user.name %></h3>
+    <h1 id="title">CODEPREP</h1><img src="http://i22.photobucket.com/albums/b315/Doifreakuout14/LOGO.png">
 
- <h3> Solution For: <%= @solution.question.title %></h3>
- <pre><%= @solution.content %></pre>
-
-<% @comments.each do |comment|  %>
-    <h3><%= comment.user.name %></h3>
-    <p><%= comment.content %></p>
-    <div ><%= link_to like_comment_path(comment), method: :put do %>
-    <button type="button" class="btn btn-info" aria-label="Left Align" >
-      <span class="glyphicon glyphicon-thumbs-up glyphicon-align-center" aria-hidden="true"></span>
-      <span class="badge" style="margin-left: 15px;"><%= comment.get_upvotes.size  %></span>
-    </button>
-    <% end  %>
-    
-
-  <%= link_to dislike_comment_path(comment), method: :put do %>
-  <button type="button" class="btn btn-info" aria-label="Left Align" >
-      <span class="glyphicon glyphicon-thumbs-down glyphicon-align-center" aria-hidden="true"></span>
-      <span class="badge" style="margin-left: 15px;"><%= comment.get_downvotes.size  %></span>
-    </button>
+<div class="row">
+      <div class="col s12 m12 l12">
+        <div class="card-panel">
+          <span>
+          <h4>Solution - <%= @solution.question.title %></h4>
+          <%= @solution.content %>
+          </span>
+        </div>
+      </div>
     </div>
-  <% end %>
-<% end %>
+
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-6 col-sm-4 col-lg-12">
+       <%= bootstrap_form_for(@new_comment, {url: 'comments/create'}) do |t| %>
+              <%= t.text_area :content, :rows => 8, label: "LEAVE A COMMENT HERE:" %>
+              <%= t.primary %>
+              <%= t.hidden_field :solution_id, :value => @solution.id%>
+            <% end %>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+      <div class="col s12 m12 l12">
+        <div class="card-panel">
+          <span>
+        <% @comments.each do |comment|  %>
+    <h3><i><%= comment.user.name %> says..</i></h3>
+    <p><%= comment.content %></p>
+        <%= link_to like_comment_path(comment), method: :put do %>
+            <button class="btn waves-effect waves-light" id="up">LIKE!
+            <span >(<%= comment.get_upvotes.size  %>)</span></button>
+        <% end  %>
+        <%= link_to dislike_comment_path(comment), method: :put do %>
+            <button class="btn waves-effect waves-light" id="down">DISLIKE!
+            <span >(<%= comment.get_downvotes.size  %>)</span></button>
+        <% end %>
+    <% end %>
+          </span>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
 </div>
 </div>
 </div>
 
 
 <%= render "partials/footer" %>
+

@@ -1,16 +1,17 @@
 <%= render "partials/nav" %>
 
 <div class="container-fluid">
- <h1>Problem:</h1>
+<a class="hidden" id="difficulty" data="EASY_STATE"></a>
+                 <div id="countdown"></div>
             <h3><%= @question[0].content %></h3>
+       
     <div class="row">
         <div class="col-xs-6 col-sm-10 col-lg-12">
             <div class="row">
            <%= bootstrap_form_for @solution do |t| %>
-              <%= t.text_area :content %>
+              <%= t.text_area :content, label: "INPUT SOLUTION HERE:", :class => 'easy_box' %>
               <%= t.primary %>
               <%= t.hidden_field :question_id, :value => @question[0].id %>
-              <
             <% end %>
             </div>
         </div>
@@ -18,4 +19,6 @@
 </div>
 
 <%= render "partials/footer" %>
+
+
 

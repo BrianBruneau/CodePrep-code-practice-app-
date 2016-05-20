@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   # put 'solutions/:id/dislike' => 'rating#create'
 
 # COMMENTS
-  post 'comments/create' => 'comments#create'
+  post 'solutions/comments/create' => 'comments#create'
 
   delete 'comments/destroy' => 'comments#destroy'
 
@@ -33,6 +33,8 @@ Rails.application.routes.draw do
   get 'mysolutions' => 'solutions#mysolutions'
 
   put 'solutions/:id' => 'solutions#update'
+
+  get 'questions/solutions/:id' => 'solutions#show'
 
   # QUESTIONS
 
@@ -83,9 +85,9 @@ Rails.application.routes.draw do
 
 #START CHALLENGE
 
-  get 'main' => 'main#index'
+  # get 'main' => 'main#index'
 
-  root 'users#new'
+  root 'main#index'
 
   #ABOUT PAGE
 

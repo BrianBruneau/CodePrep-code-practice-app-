@@ -4,18 +4,44 @@
 <div class="row">
   <div class="col-xs-6 col-sm-10 col-lg-12">
 
- <h3> Logged in as <%= @current_user.name %></h3>
-
   <h1>MY SAVED SOLUTIONS</h1>
   <% @solutions.each do |solution|  %>
   <br>
-	<pre class="solutions"><strong>PROBLEM:</strong><br><br><%= solution.question.content %>
-  <br>
-  <strong>SOLUTION:</strong><br><br><%= solution.content %></pre>
-  <button id="<%= solution.id %>" class="delete">DELETE</button>
+	<div class="row">
+      <div class="col s12 m12 l12">
+        <div class="card-panel">
+        <p><strong>PROBLEM:</strong><br><br><p class="text"><%= solution.question.content %></p></p>
+
+        <br>
+        
+        <p><strong>SOLUTION:</strong><br><br><%= solution.content %></p>
+        </div>
+      </div>
+    </div>
+  <button id="<%= solution.id %>" class="btn waves-effect waves-light delete">DELETE</button>
+  <button class="btn waves-effect waves-light" data-target="#modal<%= solution.id %>" data-toggle="modal" >EDIT</button>
+  <a class="btn waves-effect waves-light" href="/questions/<%= solution.question_id %>">VIEW</a>
+
+   <div id="modal<%= solution.id %>" class="modal">
+ <div class="col-sm-8 col-md-10 col-lg-12">
+      <%= bootstrap_form_for solution do |t| %>
+              <%= t.text_area :content, :rows => 15 %>
+              <%= t.primary %>
+              <%= t.hidden_field :question_id %>
+            <% end %>
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> 
+  </div>
+  </div>
+
 <% end %>
 </div>
 </div>
 </div>
 
 <%= render "partials/footer" %>
+
+
+
+ 
+
+

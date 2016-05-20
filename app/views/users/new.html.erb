@@ -17,23 +17,15 @@
 =======
 <nav>
     <div class="nav-wrapper">
-        <ul class="right hide-on-med-and-down">
-            <!-- Dropdown Trigger -->
-            <!-- <li style="list-style: none"><button class=
-            "btn waves-effect waves-light" id="login" type=
-            "submit">LOGIN</button></li> -->
-             <li style="list-style: none"><button class=
-            "btn waves-effect waves-light" data-target="#modal2" data-toggle=
-            "modal" id="login" type="submit">LOGIN</button></li>
-
-
-        </ul>
-        <ul class="left hide-on-med-and-down">
+    
             <!-- Dropdown Trigger -->
             <li style="list-style: none"><button class=
+            "btn waves-effect waves-light" id="login" href="/login">LOGIN</button></li>
+    
+         <li style="list-style: none"><button class=
             "btn waves-effect waves-light" data-target="#modal1" data-toggle=
             "modal" id="login" type="submit">LEARN MORE</button></li>
-        </ul>
+
     </div>
 </nav>         
 
@@ -41,7 +33,7 @@
     <div class="row">
         <div class="col-sm-8 col-md-10 col-lg-12">
             <h1 id="title">CODEPREP</h1><img src=
-            "http://i22.photobucket.com/albums/b315/Doifreakuout14/LOGO.png">
+            "https://i22.photobucket.com/albums/b315/Doifreakuout14/LOGO.png">
             <h1>SIGN UP</h1>
             <div class="container-fluid">
                 <%= bootstrap_form_for(@user, {url: 'signup' }) do |f| %><%= f.text_field :name %><%= f.email_field :email %><%= f.password_field :password %><br>
@@ -51,25 +43,30 @@
     </div>
 </div>
 
+ <div id="modal1" class="modal">
+ <div class="col-sm-8 col-md-10 col-lg-12">
+      <h4>ABOUT CODEPREP</h4>
+      <p>Are you new to programming? CODEPREP is just what you need to prepare and practice for the high stress dynamic of technical interviews. With our variety of sample questions, varying difficulty and integrated peer review elements, you are able to simulate whiteboarding with live feedback.</p>
 
-<div class="modal" id="modal1">
-    <div class="col-sm-8 col-md-10 col-lg-12">
-        <h4>ABOUT CODEPREP</h4>
-        <p>A bunch of text</p>
-        <h4>WHY SHOULD I SIGN UP?</h4>
-        <p>A bunch more text</p><button class="btn btn-default" data-dismiss=
-        "modal" type="button">Close</button>
-    </div>
-</div>
-<div class="modal" id="modal2">
-    <div class="col-sm-8 col-md-10 col-lg-12">
-        <h1>
-        LOGIN</h1><%= bootstrap_form_for :user do |f| %><%= f.email_field :email %><%= f.password_field :password %><%= f.primary 'Login' %><%end %><button class="btn btn-default"
-        data-dismiss="modal" type="button">Close</button>
-    </div>
-</div>
+      <h4>WHY SHOULD I SIGN UP?</h4>
+      <p>We strongly believe in the adage: practice makes perfect. Technical interviews are a necessary evil for developers looking for work. By using CODEPREP you gain access to a database of questions and their respective solutions from the CODEPREP community. The ability to review other solutions, or suggest edits and changes to a given solution (or sudo-code) is an invaluable resource for programmers.  </p> 
 
+      <h4>WHAT DOES IT COST?</h4>
+      <p>The best things in life are free; CODEPEN is no different. We believe that while the value of CODEPEN is immeasurable, the cost should be nil. </p>
+
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> 
+  </div>
+  </div>
+
+  
+
+  
 
 <%= render "partials/footer" %>
 
+<<<<<<< HEAD
+>>>>>>> master
+=======
+
+ 
 >>>>>>> master

@@ -5,7 +5,7 @@ class SolutionsController < ApplicationController
 
   def index
     @question = Question.find(params[:id])
-    @solutions = Solution.find_by({question_id: @question.id}).order(:cached_votes_score => :desc)
+    @solutions = Solution.find_by({question_id: @question.id})
   end
 
   def update
@@ -47,13 +47,19 @@ class SolutionsController < ApplicationController
     if(@comment_count === 0)
       @comments = []
     else
-      @comments = Comment.includes(:user).where({solution_id: @solution.id})
+      @comments = Comment.includes(:user).where({solution_id: @solution.id}).order(:cached_votes_score => :desc)
     end
 
   end
 
   def mysolutions
-    @solutions = Solution.includes(:question).where({user_id: @current_user.id})
+    @solutions_count = Solution.where({user_id: @current_user.id}).count
+    
+    if(@solutions_count === 0)
+      @solutions = []
+    else
+      @solutions = Solution.includes(:question).where({user_id: @current_user.id})
+    end
 
     #@questions = []
 
